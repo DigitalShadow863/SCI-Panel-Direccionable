@@ -23,3 +23,19 @@
 - Documentación en Word
 
 ## Funcionalidades principales
+
+- Registro de sensores direccionables
+
+- Simulación de lecturas de sensores
+
+- Detección de umbral
+
+- Verificación de alarmas
+
+- Activación de sirena y estroboscópicas
+
+- Manejo de energía (principal y respaldo)
+
+- Notificación remota
+
+- Registro de eventos

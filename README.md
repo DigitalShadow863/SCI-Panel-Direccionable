@@ -2,9 +2,9 @@
 
 #### Integrantes
 
--
--
--
+- Marcelo Gatica Jhordy Emanuel
+- Tacilla Terrones Cleison Jhair
+- Pérez Chavez Percy Felipe
 
 ## Descripción del proyecto
 ## Tecnologías utilizadas

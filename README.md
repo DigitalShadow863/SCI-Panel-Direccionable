@@ -1,2 +1,11 @@
-# SCI-Panel-Direccionable
-Proyecto académico: Diseño e Implementación de Algoritmos para un Panel Direccionable del Sistema Contra Incendios
+# PROYECTO: Diseño de Algoritmos para un Panel SCI 
+
+#### Integrantes
+
+-
+-
+-
+
+## Descripción del proyecto
+## Tecnologías utilizadas
+## Funcionalidades principales

@@ -1,0 +1,89 @@
+Algoritmo SCI_Grupo7
+    Dimension SensorID[100]
+    Dimension SensorTipo[100]
+    Dimension SensorZona[100]
+    Dimension SensorUmbral[100]
+    Dimension SensorActivo[100]
+    CantidadSensores = 0
+    EstadoEnergia = "PRINCIPAL"
+
+    CantidadSensores = CantidadSensores + 1
+    SensorID[CantidadSensores] = 101
+    SensorTipo[CantidadSensores] = "Humo"
+    SensorZona[CantidadSensores] = 1
+    SensorUmbral[CantidadSensores] = 50
+    SensorActivo[CantidadSensores] = Verdadero
+	
+    CantidadSensores = CantidadSensores + 1
+    SensorID[CantidadSensores] = 102
+    SensorTipo[CantidadSensores] = "Temp"
+    SensorZona[CantidadSensores] = 1
+    SensorUmbral[CantidadSensores] = 70
+    SensorActivo[CantidadSensores] = Verdadero
+	
+    CantidadSensores = CantidadSensores + 1
+    SensorID[CantidadSensores] = 201
+    SensorTipo[CantidadSensores] = "Humo"
+    SensorZona[CantidadSensores] = 2
+    SensorUmbral[CantidadSensores] = 50
+    SensorActivo[CantidadSensores] = Verdadero
+	
+    CantidadSensores = CantidadSensores + 1
+    SensorID[CantidadSensores] = 999
+    SensorTipo[CantidadSensores] = "Manual"
+    SensorZona[CantidadSensores] = 1
+    SensorUmbral[CantidadSensores] = 1
+    SensorActivo[CantidadSensores] = Verdadero
+
+    Repetir
+        Escribir ""
+        Escribir "1) Simular lectura"
+        Escribir "2) Falla energía"
+        Escribir "3) Restaurar energía"
+        Escribir "4) Listar sensores"
+        Escribir "0) Salir"
+        Leer op
+        Segun op Hacer
+            1:
+                Escribir "Ingrese ID del sensor:"
+                Leer id
+                pos = 0
+				           
+                Para i = 1 Hasta CantidadSensores
+                    Si SensorID[i] = id Entonces
+                        pos = i
+                    FinSi
+                FinPara
+                Si pos = 0 Entonces
+                    Escribir "ERROR: No existe el sensor"
+                SiNo
+                    Escribir "Ingrese valor de lectura:"
+                    Leer valor
+                    umbral = SensorUmbral[pos]
+                    Si valor >= umbral Entonces
+                        Escribir "Alarma detectada en sensor ", id
+                        Escribir "Activando estroboscópicas zona ", SensorZona[pos]
+                        Escribir "Activando sirenas zona ", SensorZona[pos]
+                        Escribir "Energía actual: ", EstadoEnergia
+                    SiNo
+                        Escribir "Lectura normal"
+                    FinSi
+                FinSi
+            2:
+                EstadoEnergia = "RESPALDO"
+                Escribir "Conmutado a energía de respaldo."
+				
+            3:
+                EstadoEnergia = "PRINCIPAL"
+                Escribir "Energía principal restaurada."
+				
+            4:
+                Escribir "----- LISTADO DE SENSORES -----"
+                Para i = 1 Hasta CantidadSensores
+                    Escribir "ID:", SensorID[i], " Tipo:", SensorTipo[i], " Zona:", SensorZona[i], " Umbral:", SensorUmbral[i]
+                FinPara
+				
+        FinSegun
+    Hasta Que op = 0
+    Escribir "Simulador terminado."
+FinAlgoritmo
